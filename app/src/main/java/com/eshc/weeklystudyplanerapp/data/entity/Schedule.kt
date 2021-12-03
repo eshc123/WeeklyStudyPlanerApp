@@ -1,4 +1,4 @@
-package com.eshc.weeklystudyplanerapp.data
+package com.eshc.weeklystudyplanerapp.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
