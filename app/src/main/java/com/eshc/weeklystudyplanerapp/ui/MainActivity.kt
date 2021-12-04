@@ -1,7 +1,8 @@
-package com.eshc.weeklystudyplanerapp
+package com.eshc.weeklystudyplanerapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.eshc.weeklystudyplanerapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
