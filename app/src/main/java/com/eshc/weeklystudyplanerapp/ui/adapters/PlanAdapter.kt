@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eshc.weeklystudyplanerapp.R
 import com.eshc.weeklystudyplanerapp.data.entity.Plan
 
-class PlanAdapter(private val plans: List<Plan>) :
+class PlanAdapter :
     RecyclerView.Adapter<PlanAdapter.PlanViewHolder>() {
+    val items = mutableListOf<Plan>()
+
 
     inner class PlanViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val subjectTextView : AppCompatTextView = view.findViewById(R.id.tv_subject)
@@ -22,11 +24,20 @@ class PlanAdapter(private val plans: List<Plan>) :
     }
 
     override fun onBindViewHolder(holder: PlanViewHolder, position: Int) {
-        holder.titleTextView.text = plans.get(position).title
-        holder.subjectTextView.text = plans.get(position).subjectId.toString()
+        holder.titleTextView.text = items.get(position).title
+        holder.subjectTextView.text = items.get(position).subjectId.toString()
     }
 
     override fun getItemCount(): Int {
-        return plans.size
+        return items.size
+    }
+    fun replaceAll(items: List<Plan>?) {
+        items?.let {
+            this.items.run {
+                clear()
+                addAll(it)
+                notifyDataSetChanged()
+            }
+        }
     }
 }

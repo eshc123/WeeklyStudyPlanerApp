@@ -12,9 +12,6 @@ interface PlanDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertPlan(plan : Plan)
 
-    @Delete
-    fun deletePlan(plan : Plan)
-
     @Query("DELETE FROM plan_table")
     suspend fun deleteAll()
 }

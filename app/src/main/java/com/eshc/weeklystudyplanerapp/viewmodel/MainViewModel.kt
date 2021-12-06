@@ -1,9 +1,6 @@
 package com.eshc.weeklystudyplanerapp.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.eshc.weeklystudyplanerapp.data.entity.Plan
 import com.eshc.weeklystudyplanerapp.data.repository.PlanRepository
 import kotlinx.coroutines.launch
@@ -14,5 +11,14 @@ class MainViewModel(private val repository: PlanRepository) : ViewModel() {
 
     fun insert(plan: Plan) = viewModelScope.launch {
         repository.insert(plan)
+    }
+}
+class MainModelFactory(private val repository: PlanRepository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return MainViewModel(repository) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

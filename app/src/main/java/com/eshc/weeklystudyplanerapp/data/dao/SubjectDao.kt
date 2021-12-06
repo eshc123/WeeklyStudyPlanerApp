@@ -11,8 +11,5 @@ interface SubjectDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertSubject(subject : Subject)
-
-    @Delete
-    fun deleteSubject(subject : Subject)
     
 }
