@@ -31,7 +31,9 @@ abstract class AppDatabase : RoomDatabase() {
 
                     var plan = Plan(0,1,"DataStructure","0610","0800",1,false)
                     planDao.insertPlan(plan)
-                    plan = Plan(1,1,"ComputerNetwork","0910","1200",2,false)
+                    plan = Plan(1,1,"ComputerNetwork","0910","1200",2,true)
+                    planDao.insertPlan(plan)
+                    plan = Plan(2,1,"OperatingSystem","0810","0900",3,false)
                     planDao.insertPlan(plan)
 
                 }

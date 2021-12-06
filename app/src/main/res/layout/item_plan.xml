@@ -25,4 +25,23 @@
         app:layout_constraintTop_toBottomOf="@id/tv_subject"
         tools:text="DataStructure" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_subject"
+        app:layout_constraintEnd_toStartOf="@id/cb_done"
+        tools:text="06:10~09:10"/>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
