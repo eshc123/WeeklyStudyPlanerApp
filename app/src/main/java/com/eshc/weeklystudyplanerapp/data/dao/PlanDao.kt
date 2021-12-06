@@ -15,4 +15,6 @@ interface PlanDao {
     @Delete
     fun deletePlan(plan : Plan)
 
+    @Query("DELETE FROM plan_table")
+    suspend fun deleteAll()
 }
