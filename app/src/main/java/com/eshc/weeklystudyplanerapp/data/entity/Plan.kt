@@ -11,5 +11,6 @@ data class Plan(
     val title : String,
     @ColumnInfo(name = "start_time") val startTime : String,
     @ColumnInfo(name = "finish_time") val finishTime : String,
-    @ColumnInfo(name = "subject_id") val subjectId : Int // 분야
+    @ColumnInfo(name = "subject_id") val subjectId : Int, // 분야
+    val done : Boolean
 )
