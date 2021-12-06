@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">WeeklyStudyPlanerApp</string>
+    <string name="app_name">WeeklyStudyPlaner</string>
+    <string name="text_plan_title">Plan Title : </string>
+    <string name="hint_plan_title">Title…</string>
+
+    <string name="text_start_title">Start Time : </string>
+    <string name="hint_start_title">Start…</string>
+
+    <string name="text_finish_title">Finish Time : </string>
+    <string name="hint_finish_title">Finish…</string>
+    
+    <string name="button_ok">OK</string>
+    <string name="add_plan">Add Plan</string>
 </resources>
