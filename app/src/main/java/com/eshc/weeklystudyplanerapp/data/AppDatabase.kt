@@ -29,11 +29,11 @@ abstract class AppDatabase : RoomDatabase() {
                     val planDao = database.planDao()
                     planDao.deleteAll()
 
-                    var plan = Plan(0,1,"DataStructure","0610","0800",1,false)
+                    var plan = Plan(day = 1,title = "DataStructure",startTime = "0610",finishTime = "0800",subjectId = 1,done = false)
                     planDao.insertPlan(plan)
-                    plan = Plan(1,1,"ComputerNetwork","0910","1200",2,true)
+                    plan = Plan(day = 1,title = "ComputerNetwork",startTime = "0910",finishTime = "1200",subjectId = 2,done = true)
                     planDao.insertPlan(plan)
-                    plan = Plan(2,1,"OperatingSystem","0810","0900",3,false)
+                    plan = Plan(day = 1,title = "OperatingSystem",startTime = "0810",finishTime = "0900",subjectId = 3,done = false)
                     planDao.insertPlan(plan)
 
                 }

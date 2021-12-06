@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "plan_table")
 data class Plan(
-    @PrimaryKey val id : Int,
+    @PrimaryKey(autoGenerate = true) val id : Int = 0,
     val day : Int, // 0 : 일 , 1 : 월 ..
     val title : String,
     @ColumnInfo(name = "start_time") val startTime : String,
