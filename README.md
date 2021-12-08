@@ -1,8 +1,6 @@
 Room Sample App - Weekly Study Planer App
 
-
-
-
+Room, DataBinding
 
 Note
 

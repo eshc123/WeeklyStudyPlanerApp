@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_subject"
-        android:layout_width="wrap_content"
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Computer Science" />
+        android:padding="8dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tv_subject"
-        app:layout_constraintTop_toBottomOf="@id/tv_subject"
-        tools:text="DataStructure" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Computer Science" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_subject"
-        app:layout_constraintEnd_toStartOf="@id/cb_done"
-        tools:text="06:10~09:10"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_subject"
+            app:layout_constraintTop_toBottomOf="@id/tv_subject"
+            tools:text="DataStructure" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cb_done"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cb_done"
+            app:layout_constraintStart_toEndOf="@id/tv_subject"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="06:10~09:10" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
