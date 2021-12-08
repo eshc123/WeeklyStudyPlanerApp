@@ -8,6 +8,8 @@
 
     <string name="text_finish_title">Finish Time : </string>
     <string name="hint_finish_title">Finish…</string>
+
+    <string name="text_delete_all">Delete All</string>
     
     <string name="button_ok">OK</string>
     <string name="add_plan">Add Plan</string>

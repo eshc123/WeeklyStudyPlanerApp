@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eshc.weeklystudyplanerapp.MainApplication
@@ -38,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity,NewPlanActivity::class.java)
             startActivityForResult(intent,newPlanActivityRequestCode)
+        }
+        val tvDeleteAll : AppCompatTextView = findViewById(R.id.tv_delete_all)
+        tvDeleteAll.setOnClickListener {
+            mainVM.deleteAll()
         }
     }
 

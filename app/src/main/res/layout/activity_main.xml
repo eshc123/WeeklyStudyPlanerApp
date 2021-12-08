@@ -5,14 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/rv_plan">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_delete_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_delete_all"
+            android:textSize="14sp"
+            android:gravity="end"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_plan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         tools:listitem="@layout/item_plan"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

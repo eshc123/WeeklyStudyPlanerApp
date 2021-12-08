@@ -14,4 +14,10 @@ class PlanRepository(private val planDao : PlanDao) {
     suspend fun insert(plan: Plan){
         planDao.insertPlan(plan)
     }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun deleteALl(){
+        planDao.deleteAll()
+    }
 }

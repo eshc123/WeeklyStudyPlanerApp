@@ -12,6 +12,9 @@ class MainViewModel(private val repository: PlanRepository) : ViewModel() {
     fun insert(plan: Plan) = viewModelScope.launch {
         repository.insert(plan)
     }
+    fun deleteAll() = viewModelScope.launch {
+        repository.deleteALl()
+    }
 }
 class MainModelFactory(private val repository: PlanRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
