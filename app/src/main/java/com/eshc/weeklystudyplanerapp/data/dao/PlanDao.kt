@@ -14,4 +14,7 @@ interface PlanDao {
 
     @Query("DELETE FROM plan_table")
     suspend fun deleteAll()
+
+    @Delete
+    suspend fun deletePlan(vararg plans: Plan)
 }
