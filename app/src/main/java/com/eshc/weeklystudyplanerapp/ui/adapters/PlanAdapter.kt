@@ -9,30 +9,27 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eshc.weeklystudyplanerapp.R
 import com.eshc.weeklystudyplanerapp.data.entity.Plan
+import com.eshc.weeklystudyplanerapp.databinding.ItemPlanBinding
 
 class PlanAdapter :
     RecyclerView.Adapter<PlanAdapter.PlanViewHolder>() {
     val items = mutableListOf<Plan>()
 
 
-    inner class PlanViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        val subjectTextView : AppCompatTextView = view.findViewById(R.id.tv_subject)
-        val titleTextView : AppCompatTextView = view.findViewById(R.id.tv_title)
-        val timeTextView : AppCompatTextView = view.findViewById(R.id.tv_time)
-        val doneCheckBox : AppCompatCheckBox = view.findViewById(R.id.cb_done)
+    inner class PlanViewHolder(val binding: ItemPlanBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(plan: Plan){
+            binding.plan = plan
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_plan,parent,false)
-        return PlanViewHolder(view)
+        val binding = ItemPlanBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return PlanViewHolder(binding)
     }
 
-    @SuppressLint("SetTextI18n")
+
     override fun onBindViewHolder(holder: PlanViewHolder, position: Int) {
-        holder.titleTextView.text = items.get(position).title
-        holder.subjectTextView.text = items.get(position).subjectId.toString()
-        holder.timeTextView.text = "${items.get(position).startTime} ~ ${items.get(position).finishTime}"
-        holder.doneCheckBox.isChecked = items.get(position).done
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int {
