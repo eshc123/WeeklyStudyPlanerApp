@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        val adapter = PlanAdapter()
+        val adapter = PlanAdapter(mainVM)
         binding.rvPlan.adapter = adapter
         binding.rvPlan.layoutManager = LinearLayoutManager(this)
         binding.tvToday.text = getToday()
@@ -61,6 +61,6 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getToday():String {
         val data = Calendar.getInstance().time
-        return SimpleDateFormat("yyyy년 MM월 dd일 EE요일",Locale.getDefault()).format(data)
+        return SimpleDateFormat("yyyy.MM.dd (EE)",Locale.getDefault()).format(data)
     }
 }

@@ -2,61 +2,85 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/ll_top"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@id/rv_plan">
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_today"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="4dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/pretendard_bold"
-            android:textSize="18sp"
-            android:gravity="center"/>
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            app:layout_constraintBottom_toTopOf="@id/rv_plan"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_delete_all"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name_simple"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="start"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:text="WSP" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/pretendard_semi_bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="2021.12.09 (목)" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_delete_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="83dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="@string/text_delete_all"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_plan"
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_top"
+            tools:listitem="@layout/item_plan" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_delete_all"
-            android:fontFamily="@font/pretendard_regular"
-            android:textSize="14sp"
-            android:gravity="end"/>
+            android:layout_margin="16dp"
+            android:contentDescription="@string/add_plan"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_plan"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/item_plan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/add_plan"
-        android:src="@drawable/ic_baseline_add_24"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
