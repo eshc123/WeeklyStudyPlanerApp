@@ -18,6 +18,8 @@ import com.eshc.weeklystudyplanerapp.ui.adapters.PlanAdapter
 import com.eshc.weeklystudyplanerapp.viewmodel.MainModelFactory
 import com.eshc.weeklystudyplanerapp.viewmodel.MainViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val newPlanActivityRequestCode = 1
@@ -32,18 +34,16 @@ class MainActivity : AppCompatActivity() {
         val adapter = PlanAdapter()
         binding.rvPlan.adapter = adapter
         binding.rvPlan.layoutManager = LinearLayoutManager(this)
-
+        binding.tvToday.text = getToday()
         mainVM.allPlans.observe(this){ plans ->
             adapter.replaceAll(plans)
         }
 
-        val fab : FloatingActionButton = findViewById(R.id.fab_add)
-        fab.setOnClickListener {
+        binding.fabAdd.setOnClickListener {
             val intent = Intent(this@MainActivity,NewPlanActivity::class.java)
             startActivityForResult(intent,newPlanActivityRequestCode)
         }
-        val tvDeleteAll : AppCompatTextView = findViewById(R.id.tv_delete_all)
-        tvDeleteAll.setOnClickListener {
+        binding.tvDeleteAll.setOnClickListener {
             mainVM.deleteAll()
         }
     }
@@ -58,5 +58,9 @@ class MainActivity : AppCompatActivity() {
             val plan = Plan(day = 1,title = title,startTime = start,finishTime = finish,subjectId = 1,done = false)
             mainVM.insert(plan)
         }
+    }
+    private fun getToday():String {
+        val data = Calendar.getInstance().time
+        return SimpleDateFormat("yyyy년 MM월 dd일 EE요일",Locale.getDefault()).format(data)
     }
 }
