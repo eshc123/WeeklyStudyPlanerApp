@@ -17,3 +17,4 @@ Note
 - https://developer.android.com/codelabs/android-room-with-a-view-kotlin?hl=ko
 - https://developer.android.com/topic/libraries/data-binding?hl=ko
 - https://hanyeop.tistory.com/213
+- https://hemulen.tistory.com/10

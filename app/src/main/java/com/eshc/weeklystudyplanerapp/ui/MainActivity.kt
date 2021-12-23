@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatTextView
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvPlan.adapter = adapter
         binding.rvPlan.layoutManager = LinearLayoutManager(this)
         binding.tvToday.text = getToday()
+
         mainVM.allPlans.observe(this){ plans ->
             adapter.replaceAll(plans)
         }
@@ -55,7 +58,9 @@ class MainActivity : AppCompatActivity() {
             val title = data?.getStringExtra(NewPlanActivity.EXTRA_TITLE) ?: ""
             val start = data?.getStringExtra(NewPlanActivity.EXTRA_START) ?: "0000"
             val finish = data?.getStringExtra(NewPlanActivity.EXTRA_FINISH) ?: "2400"
-            val plan = Plan(day = 1,title = title,startTime = start,finishTime = finish,subjectId = 1,done = false)
+            val day = data?.getIntExtra(NewPlanActivity.EXTRA_DAY,0) ?: 0
+            val plan = Plan(day = day,title = title,startTime = start,finishTime = finish,subjectId = 1,done = false)
+            Log.d("NewPlan","day : ${day} , title : ${title}, time : ${start} ~ ${finish}")
             mainVM.insert(plan)
         }
     }
