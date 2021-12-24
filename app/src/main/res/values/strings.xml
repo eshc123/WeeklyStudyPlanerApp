@@ -14,18 +14,19 @@
     <string name="hint_finish_title">(예)1200</string>
 
     <string name="text_delete_all">전체 삭제</string>
+    <string name="text_today">전체/오늘</string>
 
     <string name="button_ok">확인</string>
     <string name="add_plan">추가</string>
 
     <string-array name="days_array">
+        <item>일요일</item>
         <item>월요일</item>
         <item>화요일</item>
         <item>수요일</item>
         <item>목요일</item>
         <item>금요일</item>
         <item>토요일</item>
-        <item>일요일</item>
     </string-array>
 
 </resources>

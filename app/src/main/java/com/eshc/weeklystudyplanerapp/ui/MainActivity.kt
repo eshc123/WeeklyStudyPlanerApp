@@ -5,10 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,15 +36,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         val adapter = PlanAdapter(mainVM)
+        val todayAdapter = PlanAdapter(mainVM)
         binding.rvPlan.adapter = adapter
         binding.rvPlan.layoutManager = LinearLayoutManager(this)
+        binding.rvPlanToday.adapter = todayAdapter
+        binding.rvPlanToday.layoutManager = LinearLayoutManager(this)
         binding.tvToday.text = getTodayTitle()
 
-//        mainVM.allPlans.observe(this){ plans ->
-//            adapter.replaceAll(plans)
-//        }
-        mainVM.todayPlans(1).observe(this) { plans ->
+        mainVM.allPlans.observe(this){ plans ->
             adapter.replaceAll(plans)
+        }
+        mainVM.todayPlans(Calendar.getInstance().get(Calendar.DAY_OF_WEEK)-1).observe(this) { plans ->
+            todayAdapter.replaceAll(plans)
         }
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this@MainActivity,NewPlanActivity::class.java)
@@ -50,6 +55,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.tvDeleteAll.setOnClickListener {
             mainVM.deleteAll()
+        }
+        binding.tvTodayToggle.setOnClickListener {
+            binding.rvPlan.visibility = if(binding.rvPlan.isVisible) View.GONE else View.VISIBLE
+            binding.rvPlanToday.visibility = if(binding.rvPlanToday.isVisible) View.GONE else View.VISIBLE
         }
     }
 
