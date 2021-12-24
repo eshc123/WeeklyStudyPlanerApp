@@ -36,12 +36,14 @@ class MainActivity : AppCompatActivity() {
         val adapter = PlanAdapter(mainVM)
         binding.rvPlan.adapter = adapter
         binding.rvPlan.layoutManager = LinearLayoutManager(this)
-        binding.tvToday.text = getToday()
+        binding.tvToday.text = getTodayTitle()
 
-        mainVM.allPlans.observe(this){ plans ->
+//        mainVM.allPlans.observe(this){ plans ->
+//            adapter.replaceAll(plans)
+//        }
+        mainVM.todayPlans(1).observe(this) { plans ->
             adapter.replaceAll(plans)
         }
-
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this@MainActivity,NewPlanActivity::class.java)
             startActivityForResult(intent,newPlanActivityRequestCode)
@@ -64,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             mainVM.insert(plan)
         }
     }
-    private fun getToday():String {
+    private fun getTodayTitle():String {
         val data = Calendar.getInstance().time
         return SimpleDateFormat("yyyy.MM.dd (EE)",Locale.getDefault()).format(data)
     }

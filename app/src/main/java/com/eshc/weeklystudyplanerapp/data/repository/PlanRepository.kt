@@ -9,6 +9,8 @@ class PlanRepository(private val planDao : PlanDao) {
 
     val allPlans : Flow<List<Plan>> = planDao.getPlans()
 
+    fun todayPlans(today : Int) : Flow<List<Plan>> = planDao.getTodayPlans(today)
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insert(plan: Plan){

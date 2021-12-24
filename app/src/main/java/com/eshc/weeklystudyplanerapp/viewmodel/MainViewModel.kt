@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val repository: PlanRepository) : ViewModel() {
 
     val allPlans : LiveData<List<Plan>> = repository.allPlans.asLiveData()
+    fun todayPlans(today: Int) : LiveData<List<Plan>> = repository.todayPlans(today).asLiveData()
 
     fun insert(plan: Plan) = viewModelScope.launch {
         repository.insert(plan)
