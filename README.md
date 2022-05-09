@@ -1,6 +1,6 @@
 Weekly Study Planer App - Room Sample App 
 
-Room, DataBinding
+Room, DataBinding, Hilt
 
 Note
 
@@ -18,3 +18,4 @@ Note
 - https://developer.android.com/topic/libraries/data-binding?hl=ko
 - https://hanyeop.tistory.com/213
 - https://hemulen.tistory.com/10
+- https://developer.android.com/codelabs/android-hilt?hl=ko#0

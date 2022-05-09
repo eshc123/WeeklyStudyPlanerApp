@@ -10,11 +10,10 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="8dp"
-        tools:context=".ui.NewPlanActivity">
+        android:padding="16dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/ll_title"
@@ -26,6 +25,8 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/suncheon_b"
+                android:textColor="@color/black"
                 android:text="@string/text_plan_title"
                 android:textSize="14sp" />
 
@@ -33,6 +34,8 @@
                 android:id="@+id/et_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/suncheon_r"
                 android:background="@null"
                 android:hint="@string/hint_plan_title"
                 android:textSize="12sp" />
@@ -48,13 +51,17 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/text_start_title"
+                android:fontFamily="@font/suncheon_b"
+                android:textColor="@color/black"
+                android:text="요일"
                 android:textSize="14sp" />
 
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/sp_days"
+                android:fontFamily="@font/suncheon_r"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -62,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -85,6 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -107,7 +116,6 @@
             android:id="@+id/bt_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
             android:text="@string/button_ok" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

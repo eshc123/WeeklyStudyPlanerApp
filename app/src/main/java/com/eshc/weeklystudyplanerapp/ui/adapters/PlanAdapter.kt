@@ -21,9 +21,9 @@ class PlanAdapter(val vm:MainViewModel) :
         fun bind(plan: Plan){
             binding.plan = plan
 
-            binding.ivDelete.setOnClickListener {
-                vm.deletePlan(plan)
-            }
+//            binding.ivDelete.setOnClickListener {
+//                vm.deletePlan(plan)
+//            }
         }
     }
 

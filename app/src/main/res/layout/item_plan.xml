@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="plan"
             type="com.eshc.weeklystudyplanerapp.data.entity.Plan" />
     </data>
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:padding="8dp">-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tv_subject"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="12sp"-->
+    <!--            android:text=""-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            tools:text="Computer Science" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tv_title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="14sp"-->
+    <!--            android:text="@{plan.title}"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="@id/tv_subject"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/tv_subject"-->
+    <!--            tools:text="DataStructure" />-->
+    <!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toStartOf="@id/cb_done"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/tv_subject"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            android:orientation="horizontal">-->
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tv_start"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--           android:text="@{plan.startTime}"-->
+    <!--            tools:text="06:10" />-->
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text=" ~ "/>-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tv_finish"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@{plan.finishTime}"-->
+    <!--            tools:text="09:10" />-->
+    <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+    <!--        <androidx.appcompat.widget.AppCompatCheckBox-->
+    <!--            android:id="@+id/cb_done"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:checked="@{plan.done}"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toStartOf="@id/iv_delete"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/iv_delete"-->
+    <!--            android:src="@drawable/ic_baseline_delete_24"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"/>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,63 +86,47 @@
             android:id="@+id/tv_subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="컴퓨터 공학"
             android:textSize="12sp"
-            android:text=""
+            android:fontFamily="@font/suncheon_b"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Computer Science" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
             android:text="@{plan.title}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_subject"
-            app:layout_constraintTop_toBottomOf="@id/tv_subject"
-            tools:text="DataStructure" />
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/cb_done"
+            android:textSize="14sp"
+            android:fontFamily="@font/suncheon_r"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@id/tv_subject"
+            app:layout_constraintBottom_toBottomOf="@id/tv_subject"
             app:layout_constraintStart_toEndOf="@id/tv_subject"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal">
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:text="@{plan.startTime}"
-            tools:text="06:10" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" ~ "/>
+            app:layout_constraintEnd_toStartOf="@id/cb_done"
+            tools:text="DataStructure" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_finish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{plan.finishTime}"
-            tools:text="09:10" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="@{plan.done}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/iv_delete"
-            app:layout_constraintTop_toTopOf="parent" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/iv_delete"
-            android:src="@drawable/ic_baseline_delete_24"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--            <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:id="@+id/iv_delete"-->
+        <!--                android:src="@drawable/ic_baseline_delete_24"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"/>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
